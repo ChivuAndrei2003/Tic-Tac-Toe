@@ -1,0 +1,177 @@
+:root {
+  --background-color: #c5c3c6;
+  --font-color: #000000;
+  --header-background-color: #faf9f5;
+  --header-font-color: #000000;
+  --field-background-color: #faf3e7;
+  --field-background-color-hover: #d8e4e9;
+  --border-color: #555;
+  --brown-border-color: #808285;   
+  --button-background-color: #faf9f5;
+  --button-hover-background: #faf3e7;
+  --button-active-background: #c5c3c6;
+  --font:'Comica Relief', sans-serif; 
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.comic-relief-regular {
+    font-family: "Comic Relief", system-ui;
+    
+    font-style:normal;
+  }
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--font-color);
+    font-family: var(--font);
+    margin-bottom: 80px; /*allocate space for the footer */
+}
+
+h1 {
+    line-height: 1.2;
+}
+
+button {
+    border:none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    outline: none;
+}
+
+.header {
+    padding: 20px;
+    border-bottom: 1px solid var(--brown-border-color);
+    background-color: var(--header-background-color);
+    color: var(--header-font-color);
+
+}
+
+.title { 
+    font-size: 100px;
+    text-align: center;
+    font-weight: lighter;
+}
+
+.main {
+    padding: 0 20px; /*0 padding top & bottom,20px padding left & right */
+}
+
+.message {
+    padding: 20px 0;
+    font-size: 50px;
+    text-align: center;
+}
+
+.gameboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 454px;
+    height: 454px;
+    border: 2px solid var(--border-color);
+    margin: 0px auto;
+}
+
+.field {
+    width: 150px;
+    height: 150px;
+    border: 1px solid var(--border-color);
+    background-color: var(--field-background-color);
+    font-size: 100px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.field:hover{
+    background-color: var(--field-background-color-hover);
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.restart-button {
+    padding: 10px 20px;
+    border: 3px solid var(--brown-border-color);
+    border-radius: 7px;
+    background-color: var(--button-background-color);
+    color: var(--header-font-color);
+    font-size: 50px;
+}
+
+.restart-button:hover {
+    background-color: var(--button-hover-background);
+}
+
+.restart-button:active {
+    background-color: var(--button-active-background);
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding:10px;
+    font-size: 20px;
+}
+
+@media (max-width: 660px) {
+    .title {
+      font-size: 60px;
+    }
+    
+    .message {
+      font-size: 40px;
+    }
+  
+    .restart-button {
+      font-size: 40px;
+    }
+  
+    .gameboard {
+      width: 304px;
+      height: 304px;
+      
+    }
+  
+    .field {
+      width: 100px;
+      height: 100px;
+      font-size: 70px;
+    }
+  }
+   
+@media (max-width: 420px) {
+    .title {
+      font-size: 50px;
+    }
+  
+    .message {
+      font-size: 36px;
+    }
+  
+    .restart-button {
+      font-size: 36px;
+    }
+}
