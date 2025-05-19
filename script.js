@@ -37,8 +37,56 @@ function Gameboard(){
 
 //board.gameboard[0][0].setValue("X");        // acces direct
 
-function GameController(){
+function Cell(){
+  let value = 0;
   
+  const addSign = (player) => {
+    value = player;
+  };
+
+  const getValue = () => value;
+
+  return{
+    addSign,
+    getValue
+  };
+}
+
+
+function GameController(
+  playerOneName = "Player One",
+  playerTwoName = "Player Two"
+) {
+  const board = Gameboard();
+
+  const players = [
+    {
+      name:playerOneName,
+      token:'X'
+    },
+    {
+      name:playerTwoName,
+      token:'O'
+    }
+  ];
+
+  let activePlayer = players[0];
+
+  const switchPlayerTurn = () => {
+    activePlayer = activePlayer === players[0] ? players[1] :
+    players[0];
+  };
+
+  const getActivePlayer = () => activePlayer;
+
+  const printNewRound = () => {
+    board.printBoard();
+    console.log(`${getActivePlayer().name}'s turn. `);
+  };
+
+  const playRound = () => {
+    
+  }
 }
 
 
