@@ -1,6 +1,4 @@
-Here’s **full English documentation** for your code, with explanations for each module/function and their roles. This is suited for a README or inline code documentation.
 
----
 
 # Documentation for `script.js` (Tic Tac Toe)
 
